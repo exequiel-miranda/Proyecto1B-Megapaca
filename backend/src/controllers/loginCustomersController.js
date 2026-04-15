@@ -34,10 +34,8 @@ loginCustomersController.login = async (req, res) => {
 
     //Validar la contraseña
     const isMatch = await bcrypt.compare(password, customerFound.password);
-    console.log("AKJL;SDHF;KLASJDKFL" + isMatch);
 
     if (!isMatch) {
-      console.log("ENTRA");
       customerFound.loginAttemps = (customerFound.loginAttemps || 0) + 1;
 
       //Si llega a 5 intentos fallidos se bloquea la cuenta
@@ -54,8 +52,10 @@ loginCustomersController.login = async (req, res) => {
 
       await customerFound.save();
 
-      return res.status(403).json({ message: "Password not match" });
+      return res.status(401).json({message: "Contraseña incorrecta"})
+
     }
+    
 
     //Resetear intentos si login correcto
     customerFound.loginAttemps = 0;
