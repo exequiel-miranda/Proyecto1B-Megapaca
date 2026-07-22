@@ -28,7 +28,8 @@ export const config = {
 brevo: {
     smtpUser: process.env.BREVO_SMTP_USER,
     smtpKey: process.env.BREVO_SMTP_KEY,
-    from: process.env.EMAIL_FROM
+    from: process.env.EMAIL_FROM,
+    apiKey: process.env.apiKey
 }
 };
 
