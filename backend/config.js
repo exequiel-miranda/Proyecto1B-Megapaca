@@ -10,29 +10,31 @@ export const config = {
   JWT: {
     secret: process.env.JWT_secret_key,
   },
-  email:{
+  email: {
     user_email: process.env.USER_EMAIL,
-    user_password: process.env.USER_PASSWORD
+    user_password: process.env.USER_PASSWORD,
   },
   cloudinary: {
     cloudinary_name: process.env.CLOUDINARY_CLOUD_NAME,
     cloudinary_api_key: process.env.CLOUDINARY_API_KEY,
-    cloudinary_api_secret: process.env.CLOUDINARY_API_SECRET
+    cloudinary_api_secret: process.env.CLOUDINARY_API_SECRET,
   },
-  wompi:{
+  wompi: {
     grant_type: process.env.GRANT_TYPE,
     audience: process.env.AUDIENCE,
     client_id: process.env.CLIENT_ID,
-    client_secret: process.env.CLIENT_SECRET
+    client_secret: process.env.CLIENT_SECRET,
   },
-brevo: {
+  brevo: {
     smtpUser: process.env.BREVO_SMTP_USER,
     smtpKey: process.env.BREVO_SMTP_KEY,
     from: process.env.EMAIL_FROM,
-    apiKey: process.env.apiKey
-}
+    apiKey: process.env.apiKey,
+  },
+  mailjet: {
+    apiKey: process.env.apikeymail,
+    secretKey: process.env.apisecretmail,
+    fromEmail: process.env.MAILJET_FROM_EMAIL,
+    fromName: process.env.MAILJET_FROM_NAME,
+  },
 };
-
-
-
-
